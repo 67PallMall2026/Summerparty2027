@@ -18,7 +18,7 @@
 @font-face{font-family:"Messina Sans";src:url("fonts/MessinaSans-Regular.otf") format("opentype");font-weight:400;font-style:normal;font-display:swap}
 
 /* Layout: an invitation that keeps unfolding. The summer artwork's sage canopy hangs over the hero,
-   returns as corner growth and a riverbank band, and closes the page. Centred lockups for the
+   returns as a riverbank band and closes the page; solid sage blocks carry it between. Centred lockups for the
    invitation moments, a left-aligned editorial column for the reading. Single light look by choice. */
 :root{
   --stone:#F6F3EC;      /* artwork ground */
@@ -84,7 +84,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn.line:hover{background:var(--claret);color:var(--paper)}
 @media (max-width:640px){
   .canopy-hero{display:none}
-  .canopy-hero-m{display:block;top:0;right:0;width:150%;height:auto}
+  .canopy-hero-m{display:block;inset:0 0 auto 0;width:100%;height:62%;object-fit:cover;object-position:30% 0;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
   .lockup{margin-top:clamp(200px,58vw,280px);width:100%}
   .hero-meta{letter-spacing:.24em;font-size:.72rem}
 }
@@ -113,10 +113,13 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .head.center{margin-inline:auto;text-align:center}
 .head p.sub{margin:18px 0 0;max-width:var(--measure)}
 .head.center p.sub{margin-inline:auto}
-.corner{width:min(44vw,540px);height:auto;z-index:0}
-@media (max-width:640px){.corner{width:62vw;opacity:.85}.corner-b{display:none}}
-.corner-a{top:0;right:0}
-.corner-b{bottom:0;left:0;transform:rotate(180deg)}
+/* framed sections: the summer graphic as ground, a white panel laid over it (as in the landscape artwork) */
+.framed{position:relative;overflow:hidden;background:var(--stone)}
+.framed>.bg{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;object-position:50% 30%;z-index:0;pointer-events:none}
+.framed>.wrap{position:relative;z-index:2}
+.panel{background:#fff;padding:clamp(28px,5vw,72px)}
+.panel .stay{background:var(--stone);border-color:var(--stone)}
+@media (max-width:640px){.panel{padding:24px 18px}}
 
 /* setting */
 .setting-grid{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(28px,6vw,80px);align-items:center;position:relative;z-index:2}
@@ -217,7 +220,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* details / footer */
 .details{position:relative;overflow:hidden;padding-block:clamp(72px,10vw,140px) clamp(48px,6vw,72px);text-align:center}
-.canopy-foot{right:0;bottom:0;width:min(70vw,900px);height:auto;transform:scaleY(-1)}
+.canopy-foot{left:0;right:0;bottom:0;width:100%;height:clamp(260px,34vw,460px);object-fit:cover;object-position:50% 0}
 
 .details .wrap{position:relative;z-index:2}
 .dh{font-weight:300;font-size:clamp(2rem,4vw,3.1rem);line-height:1.08;color:var(--claret);margin:14px 0 0}
@@ -227,7 +230,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .dl b{font-family:var(--sans);font-weight:400;font-size:.64rem;letter-spacing:.28em;text-transform:uppercase;color:var(--bronze)}
 .dl span{color:var(--ink)}
 .details .ctas{margin-top:40px}
-.foot{margin-top:clamp(80px,12vw,160px);display:flex;flex-direction:column;align-items:center;gap:14px;font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--claret)}
+.foot{margin-top:clamp(120px,16vw,220px);padding-bottom:clamp(40px,6vw,80px);display:flex;flex-direction:column;align-items:center;gap:14px;font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--claret)}
 .foot img{width:96px}
 .foot a{text-decoration:none}
 @media (max-width:700px){.dl{grid-template-columns:1fr}}
@@ -258,7 +261,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 <header class="hero" id="top">
   <img class="canopy canopy-hero" src="assets/sp-field.webp" alt="" width="2000" height="931">
-  <img class="canopy canopy-hero-m" src="assets/sp-drift.webp" alt="" width="1400" height="850">
+  <img class="canopy canopy-hero-m" src="assets/sp-field.webp" alt="" width="2000" height="931">
   <div class="hero-inner wrap">
     <img class="logo" src="assets/logo-bronze.png" alt="67 Pall Mall" width="600" height="419">
     <p class="city">Melbourne</p>
@@ -297,9 +300,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   </figure>
 </div>
 
-<section class="section" id="setting" aria-labelledby="setting-h">
-  <img class="canopy corner corner-a" src="assets/sp-drift.webp" alt="" width="1400" height="850" loading="lazy">
-  <div class="wrap setting-grid">
+<section class="section framed" id="setting" aria-labelledby="setting-h">
+  <img class="bg" src="assets/sp-field.webp" alt="" width="2000" height="931" loading="lazy">
+  <div class="wrap"><div class="panel setting-grid">
     <div class="head">
       <p class="eyebrow">The setting</p>
       <h2 id="setting-h">Among the trees at the <em>historic boathouse</em></h2>
@@ -312,10 +315,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </div>
     <img src="assets/crowd.webp" alt="Members talking over glasses of wine beneath yellow scalloped umbrellas" width="1800" height="1200" loading="lazy">
   </div>
+  </div>
 </section>
 
 <section class="section tickets" id="tickets" aria-labelledby="tickets-h">
-  <img class="canopy corner corner-b" src="assets/sp-drift.webp" alt="" width="1400" height="850" loading="lazy">
   <div class="wrap">
     <div class="head center">
       <p class="eyebrow">Tickets</p>
@@ -368,7 +371,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </section>
 
 <section class="section" id="wine" aria-labelledby="wine-h">
-  <img class="canopy corner corner-a" src="assets/sp-drift.webp" alt="" width="1400" height="850" loading="lazy">
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">The wine</p>
@@ -441,9 +443,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="lockup"><img src="assets/script.webp" alt="" width="1600" height="332" loading="lazy"></div>
 </div>
 
-<section class="section" id="stay" aria-labelledby="stay-h">
-  <img class="canopy corner corner-b" src="assets/sp-drift.webp" alt="" width="1400" height="850" loading="lazy">
-  <div class="wrap">
+<section class="section framed" id="stay" aria-labelledby="stay-h">
+  <img class="bg" src="assets/sp-field.webp" alt="" width="2000" height="931" loading="lazy">
+  <div class="wrap"><div class="panel">
     <div class="head center">
       <p class="eyebrow">67 Concierge</p>
       <h2 id="stay-h">Make a <em>weekend</em> of it</h2>
@@ -497,10 +499,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <button class="copy" type="button" id="copyMail" data-copy="membership@67pallmall.com.au">Copy address</button>
     </div>
   </div>
+  </div>
 </section>
 
 <section class="details" id="details" aria-labelledby="details-h">
-  <img class="canopy canopy-foot" src="assets/sp-drift.webp" alt="" width="1400" height="850" loading="lazy">
+  <img class="canopy canopy-foot" src="assets/sp-field.webp" alt="" width="2000" height="931" loading="lazy">
   <div class="wrap">
     <p class="eyebrow">The details</p>
     <h2 id="details-h" class="dh">See you <em>by the river</em></h2>

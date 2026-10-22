@@ -145,7 +145,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .pour{list-style:none;margin:6px 0 0;padding:16px 0 0;border-top:.5px solid var(--rule);display:grid;gap:12px}
 .pour li{display:grid;gap:2px}
 .pour .wine{font-weight:400}
-.pour .wine i{font-weight:300}
 .pour .where{font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze)}
 .pour .plus{font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
 .tier.deluxe{background:var(--claret);color:var(--paper);border-left-color:var(--claret)}
@@ -175,8 +174,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .cellar .r{display:block;color:var(--muted);font-size:.92rem}
 .walk{align-self:start}
 .walk p{margin:0 0 1em;max-width:var(--measure)}
-.rivers{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 0;padding:0;list-style:none}
-.rivers li{font-family:var(--sans);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:var(--claret);border:.5px solid var(--claret);padding:8px 12px;border-radius:999px}
 .walk figure{margin:34px 0 0}
 .walk img{width:100%;aspect-ratio:3/2;object-fit:cover}
 @media (max-width:820px){.wine-grid{grid-template-columns:1fr}}
@@ -339,7 +336,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <h3>Classic</h3>
         <p class="blurb">Non-vintage Champagne, the complete food offering, the full still wine line-up, the wine walkaround and the cocktail bar.</p>
         <ul class="pour">
-          <li><span class="wine">Taittinger <i>Brut Réserve</i></span><span class="where">NV · Champagne, France</span></li>
+          <li><span class="wine">NV Taittinger Brut Réserve</span></li>
         </ul>
         <span class="spacer"></span>
         <a class="btn line" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book Classic</a>
@@ -350,8 +347,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <p class="blurb">Everything in Classic, with Taittinger’s vintage and its Prestige Rosé added to the pour.</p>
         <ul class="pour">
           <li><span class="plus">Classic, plus</span></li>
-          <li><span class="wine">Taittinger <i>Brut Millésimé</i></span><span class="where">2018 · Champagne, France</span></li>
-          <li><span class="wine">Taittinger <i>Prestige Rosé</i></span><span class="where">NV · Champagne, France</span></li>
+          <li><span class="wine">2018 Taittinger Brut Millésimé</span></li>
+          <li><span class="wine">NV Taittinger Prestige Rosé</span></li>
         </ul>
         <span class="spacer"></span>
         <a class="btn line" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book Prestige</a>
@@ -362,7 +359,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <p class="blurb">Everything in Classic and Prestige, plus Taittinger’s tête de cuvée, and entry ahead of the main party.</p>
         <ul class="pour">
           <li><span class="plus">Classic and Prestige, plus</span></li>
-          <li><span class="wine">Taittinger <i>Comtes de Champagne Blanc de Blancs</i></span><span class="where">2015 · Champagne, France</span></li>
+          <li><span class="wine">2015 Taittinger Comtes de Champagne Blanc de Blancs</span></li>
         </ul>
         <span class="spacer"></span>
         <a class="btn" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book Deluxe</a>
@@ -404,9 +401,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <div class="walk">
         <h3>Mini wine walkaround</h3>
         <p>Inspired by the great river regions of the world, this year’s walkaround follows vineyards shaped by waterways and maritime breezes: from the steep banks of the Mosel to the fog-drenched hills around the Russian River and the stone terraces of the Rhône Valley, with something new to discover at every turn.</p>
-        <ul class="rivers" aria-label="Regions on the walkaround">
-          <li>Mosel</li><li>Russian River</li><li>Rhône Valley</li>
-        </ul>
         <figure>
           <img src="assets/pour.webp" alt="A sommelier pours Yarra Valley Chardonnay into a Zalto glass" width="1800" height="1200" loading="lazy">
         </figure>

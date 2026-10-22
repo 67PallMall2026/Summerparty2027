@@ -67,10 +67,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;text-align:center;padding-bottom:clamp(28px,4vw,48px)}
-/* hero graphic at its natural scale: the artwork repeats down the header, mirrored at each join so the shapes meet */
-.canopy-stack{position:absolute;inset:0;overflow:hidden;display:flex;flex-direction:column;align-items:center;pointer-events:none;-webkit-mask-image:linear-gradient(#000 88%,transparent);mask-image:linear-gradient(#000 88%,transparent)}
-.canopy-stack img{display:block;flex:none;width:max(100%,1100px);max-width:none;height:auto}
-.canopy-stack .flip{transform:scaleY(-1)}
+/* hero graphic: one copy of the portrait artwork, never scaled past its own resolution */
+.canopy-hero{inset:0 0 auto 0;width:100%;height:auto;max-width:none}
 .hero-photo{margin:clamp(40px,6vw,72px) 0 0;width:min(100%,1080px);background:#fff;padding:clamp(8px,1.2vw,14px)}
 .hero-photo img{width:100%;aspect-ratio:1469/726;object-fit:cover}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:10%;background:linear-gradient(to bottom, transparent, var(--stone) 80%);pointer-events:none;z-index:1}
@@ -90,7 +88,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn.line{color:var(--claret);background:transparent}
 .btn.line:hover{background:var(--claret);color:var(--paper)}
 @media (max-width:640px){
-  .canopy-stack img{width:600px}
+  .canopy-hero{height:100%;object-fit:cover;object-position:50% 0}
   .lockup{margin-top:24px;width:100%}
   .hero-meta{letter-spacing:.24em;font-size:.72rem}
 }
@@ -276,12 +274,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </nav>
 
 <header class="hero" id="top">
-  <div class="canopy-stack" aria-hidden="true">
-    <img src="assets/sp-field-hd.webp" alt="" width="2526" height="1176">
-    <img class="flip" src="assets/sp-field-hd.webp" alt="" width="2526" height="1176">
-    <img src="assets/sp-field-hd.webp" alt="" width="2526" height="1176">
-    <img class="flip" src="assets/sp-field-hd.webp" alt="" width="2526" height="1176">
-  </div>
+  <img class="canopy canopy-hero" src="assets/sp-portrait-hd.webp" alt="" width="1664" height="1805">
   <div class="hero-inner wrap">
     <img class="logo" src="assets/logo-bronze.png" alt="67 Pall Mall" width="600" height="419">
     <p class="city">Melbourne</p>

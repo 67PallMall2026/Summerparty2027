@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="67 Pall Mall Melbourne Summer Party">
 <meta property="og:description" content="Saturday 6 February 2027 · Studley Park Boathouse, Kew">
-<meta property="og:image" content="assets/studley-park.webp">
+<meta property="og:image" content="assets/studley-banner.webp">
 <title>Melbourne Summer Party 2027</title>
 <meta name="description" content="67 Pall Mall Melbourne Summer Party, Saturday 6 February 2027 at Studley Park Boathouse, Kew.">
 <meta name="robots" content="noindex">
@@ -67,15 +67,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;text-align:center;padding-bottom:clamp(56px,8vw,96px)}
-.canopy-hero{inset:0 0 auto 0;width:100%;height:auto;aspect-ratio:2000/931;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.canopy-hero{inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;-webkit-mask-image:linear-gradient(#000 86%,transparent);mask-image:linear-gradient(#000 86%,transparent)}
 .hero-photo{margin:clamp(40px,6vw,72px) 0 0;width:min(100%,1080px);background:#fff;padding:clamp(8px,1.2vw,14px)}
-.hero-photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.hero-photo img{width:100%;aspect-ratio:1469/726;object-fit:cover}
 .canopy-hero-m{display:none}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:22%;background:linear-gradient(to bottom, transparent, var(--stone) 80%);pointer-events:none;z-index:1}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:10%;background:linear-gradient(to bottom, transparent, var(--stone) 80%);pointer-events:none;z-index:1}
 .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
 .logo{width:clamp(120px,14vw,168px);margin-top:clamp(40px,7vw,84px)}
 .city{font-style:italic;font-weight:400;color:var(--bronze);font-size:.95rem;letter-spacing:.04em;margin:10px 0 0}
-.lockup{margin:clamp(110px,13vw,190px) 0 0;width:min(94%,820px);line-height:0}
+.lockup{margin:clamp(24px,3vw,44px) 0 0;width:min(94%,820px);line-height:0}
 .lockup img{width:100%;height:auto}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hero-meta{margin-top:clamp(18px,2.5vw,30px);display:grid;gap:10px;font-family:var(--sans);text-transform:uppercase;color:var(--bronze);font-size:.78rem;letter-spacing:.34em}
@@ -89,8 +89,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn.line:hover{background:var(--claret);color:var(--paper)}
 @media (max-width:640px){
   .canopy-hero{display:none}
-  .canopy-hero-m{display:block;inset:0 0 auto 0;width:100%;height:62%;object-fit:cover;object-position:30% 0;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
-  .lockup{margin-top:clamp(96px,28vw,140px);width:100%}
+  .canopy-hero-m{display:block;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 0;-webkit-mask-image:linear-gradient(#000 86%,transparent);mask-image:linear-gradient(#000 86%,transparent)}
+  .lockup{margin-top:24px;width:100%}
   .hero-meta{letter-spacing:.24em;font-size:.72rem}
 }
 
@@ -292,7 +292,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <a class="btn line" href="#tickets">View the tiers</a>
     </div>
     <figure class="hero-photo">
-      <img src="assets/studley-park.webp" alt="Studley Park Boathouse on the Yarra, with rowing boats moored below the deck" width="1309" height="873">
+      <img src="assets/studley-banner.webp" alt="Studley Park Boathouse on the Yarra, with rowing boats moored below the deck" width="1469" height="726">
     </figure>
   </div>
 </header>

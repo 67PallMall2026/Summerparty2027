@@ -67,10 +67,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;text-align:center;padding-bottom:clamp(56px,8vw,96px)}
-.canopy-hero{inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 0;-webkit-mask-image:linear-gradient(#000 86%,transparent);mask-image:linear-gradient(#000 86%,transparent)}
+/* hero graphic at its natural scale: the artwork repeats down the header, mirrored at each join so the shapes meet */
+.canopy-stack{position:absolute;inset:0;overflow:hidden;display:flex;flex-direction:column;align-items:center;pointer-events:none;-webkit-mask-image:linear-gradient(#000 88%,transparent);mask-image:linear-gradient(#000 88%,transparent)}
+.canopy-stack img{display:block;flex:none;width:max(100%,1100px);max-width:none;height:auto}
+.canopy-stack .flip{transform:scaleY(-1)}
 .hero-photo{margin:clamp(40px,6vw,72px) 0 0;width:min(100%,1080px);background:#fff;padding:clamp(8px,1.2vw,14px)}
 .hero-photo img{width:100%;aspect-ratio:1469/726;object-fit:cover}
-.canopy-hero-m{display:none}
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:10%;background:linear-gradient(to bottom, transparent, var(--stone) 80%);pointer-events:none;z-index:1}
 .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
 .logo{width:clamp(120px,14vw,168px);margin-top:clamp(40px,7vw,84px)}
@@ -88,8 +90,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn.line{color:var(--claret);background:transparent}
 .btn.line:hover{background:var(--claret);color:var(--paper)}
 @media (max-width:640px){
-  .canopy-hero{display:none}
-  .canopy-hero-m{display:block;inset:0;width:100%;height:100%;object-fit:cover;object-position:30% 0;-webkit-mask-image:linear-gradient(#000 86%,transparent);mask-image:linear-gradient(#000 86%,transparent)}
+  .canopy-stack img{width:600px}
   .lockup{margin-top:24px;width:100%}
   .hero-meta{letter-spacing:.24em;font-size:.72rem}
 }
@@ -253,7 +254,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* load moment: canopy settles, lockup rises — from a visible resting state */
 @media (prefers-reduced-motion:no-preference){
-  .canopy-hero,.canopy-hero-m{animation:settle 2.4s cubic-bezier(.2,.7,.2,1) both;transform-origin:50% 0}
   .hero .lockup{animation:ink 1.6s .3s ease-out both}
   @keyframes settle{from{transform:translateY(-14px) scale(1.02);opacity:.75}to{transform:none;opacity:1}}
   @keyframes ink{from{opacity:.3;clip-path:inset(0 100% 0 0)}to{opacity:1;clip-path:inset(0 0 0 0)}}
@@ -276,8 +276,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 </nav>
 
 <header class="hero" id="top">
-  <img class="canopy canopy-hero" src="assets/sp-field.webp" alt="" width="2000" height="931">
-  <img class="canopy canopy-hero-m" src="assets/sp-field.webp" alt="" width="2000" height="931">
+  <div class="canopy-stack" aria-hidden="true">
+    <img src="assets/sp-field-hd.webp" alt="" width="2526" height="1176">
+    <img class="flip" src="assets/sp-field-hd.webp" alt="" width="2526" height="1176">
+    <img src="assets/sp-field-hd.webp" alt="" width="2526" height="1176">
+    <img class="flip" src="assets/sp-field-hd.webp" alt="" width="2526" height="1176">
+  </div>
   <div class="hero-inner wrap">
     <img class="logo" src="assets/logo-bronze.png" alt="67 Pall Mall" width="600" height="419">
     <p class="city">Melbourne</p>

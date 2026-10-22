@@ -106,7 +106,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .band{position:relative}
 .band figure{margin:0;position:relative}
 .band img{width:100%;aspect-ratio:21/9;object-fit:cover;object-position:50% 58%}
-.band figcaption{font-family:var(--sans);font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);padding-top:12px}
+.band figcaption{font-family:var(--sans);font-size:.66rem;line-height:1;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);padding-block:calc(clamp(14px,1.6vw,20px) + 2px) clamp(14px,1.6vw,20px)}
 @media (max-width:640px){.band img{aspect-ratio:4/3}}
 
 /* ---------- generic section ---------- */

@@ -201,7 +201,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* stay */
 .stays{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(16px,2vw,28px);margin-top:48px}
-.stay{background:var(--paper);border:.5px solid var(--rule);padding:clamp(22px,2.4vw,32px);display:flex;flex-direction:column;gap:12px;min-width:0}
+.stay{--pad:clamp(22px,2.4vw,32px);background:var(--paper);border:.5px solid var(--rule);padding:var(--pad);display:flex;flex-direction:column;gap:12px;min-width:0}
+.stay>img.stay-img{display:block;width:calc(100% + 2*var(--pad));max-width:none;margin:calc(-1*var(--pad)) calc(-1*var(--pad)) 10px;aspect-ratio:5/4;object-fit:cover}
 .stay .where{font-family:var(--sans);font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--bronze);margin:0}
 .stay h3{font-weight:300;font-size:1.65rem;line-height:1.1;color:var(--claret);margin:0}
 .stay p{margin:0;font-size:.98rem}
@@ -446,6 +447,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </div>
     <div class="stays">
       <article class="stay">
+        <img class="stay-img" src="assets/stay-lanson.webp" alt="The arched entrance to Lanson Place, Parliament Gardens, with 502 set into the marble floor" width="1200" height="900" loading="lazy" style="object-position:50% 96%">
         <p class="where">Melbourne CBD · 550m from the Club</p>
         <h3>Lanson Place, Parliament Gardens</h3>
         <p>On the leafy edge of the city, a short walk from the Club at 85 Spring Street. The restored 1901 Salvation Army Printing Works sits within a new tower, with Chronicle 502 Bar &amp; Dining, a 20-metre heated pool and spa.</p>
@@ -460,6 +462,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <p class="note">All benefits subject to availability.</p>
       </article>
       <article class="stay">
+        <img class="stay-img" src="assets/stay-alba.webp" alt="Bathers at a rooftop pool at Alba Thermal Springs, looking over the Peninsula" width="1200" height="900" loading="lazy" style="object-position:50% 78%">
         <p class="where">Mornington Peninsula · 90 minutes</p>
         <h3>Alba Thermal Springs &amp; Spa</h3>
         <p>A 15-hectare landscaped property with more than 30 bathing experiences: forest, rain and botanical pools, a sunset pool and rooftop salt pools, plus 22 treatment rooms and Thyme restaurant.</p>
@@ -473,6 +476,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <p class="note">Discount applies to Springs bathing only.</p>
       </article>
       <article class="stay">
+        <img class="stay-img" src="assets/stay-brae.webp" alt="The guest suites at Brae at sunset, across open farmland" width="1200" height="900" loading="lazy" style="object-position:50% 55%">
         <p class="where">Birregurra · 90 minutes</p>
         <h3>Brae</h3>
         <p>Dan Hunter’s restaurant on a 30-acre organic farm, with a seasonal tasting menu built around what the garden grows, and architecturally designed guest suites on the estate.</p>

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta property="og:title" content="67 Pall Mall Melbourne Summer Party">
 <meta property="og:description" content="Saturday 6 February 2027 · Studley Park Boathouse, Kew">
-<meta property="og:image" content="assets/sunset.webp">
+<meta property="og:image" content="assets/studley-park.webp">
 <title>Melbourne Summer Party 2027</title>
 <meta name="description" content="67 Pall Mall Melbourne Summer Party, Saturday 6 February 2027 at Studley Park Boathouse, Kew.">
 <meta name="robots" content="noindex">
@@ -27,6 +27,7 @@
   --sage:#DAE2BA;       /* canopy */
   --sage-deep:#B9C394;
   --claret:#53082E;
+  --navy:#24374F;
   --bronze:#87674F;
   --ink:#2A2224;        /* body text, claret-biased near-black */
   --muted:#5E5452;
@@ -66,13 +67,15 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* ---------- hero ---------- */
 .hero{position:relative;overflow:hidden;text-align:center;padding-bottom:clamp(56px,8vw,96px)}
-.canopy-hero{inset:0 0 auto 0;width:100%;height:min(80%,760px);object-fit:cover;object-position:50% 0;-webkit-mask-image:linear-gradient(#000 72%,transparent);mask-image:linear-gradient(#000 72%,transparent)}
+.canopy-hero{inset:0 0 auto 0;width:100%;height:auto;aspect-ratio:2000/931;-webkit-mask-image:linear-gradient(#000 70%,transparent);mask-image:linear-gradient(#000 70%,transparent)}
+.hero-photo{margin:clamp(40px,6vw,72px) 0 0;width:min(100%,1080px);background:#fff;padding:clamp(8px,1.2vw,14px)}
+.hero-photo img{width:100%;aspect-ratio:3/2;object-fit:cover}
 .canopy-hero-m{display:none}
-.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:46%;background:linear-gradient(to bottom, transparent, var(--stone) 62%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:22%;background:linear-gradient(to bottom, transparent, var(--stone) 80%);pointer-events:none;z-index:1}
 .hero-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center}
 .logo{width:clamp(120px,14vw,168px);margin-top:clamp(40px,7vw,84px)}
 .city{font-style:italic;font-weight:400;color:var(--bronze);font-size:.95rem;letter-spacing:.04em;margin:10px 0 0}
-.lockup{margin:clamp(170px,24vw,330px) 0 0;width:min(94%,820px);line-height:0}
+.lockup{margin:clamp(110px,13vw,190px) 0 0;width:min(94%,820px);line-height:0}
 .lockup img{width:100%;height:auto}
 .vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .hero-meta{margin-top:clamp(18px,2.5vw,30px);display:grid;gap:10px;font-family:var(--sans);text-transform:uppercase;color:var(--bronze);font-size:.78rem;letter-spacing:.34em}
@@ -138,9 +141,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .includes{position:relative;z-index:2;margin:34px auto 0;max-width:820px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 0;font-family:var(--sans);font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);list-style:none;padding:0}
 .includes li{padding-inline:14px;border-left:.5px solid var(--rule)}
 .includes li:first-child{border-left:0}
-.tiers{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:48px;border-top:.5px solid var(--bronze);border-bottom:.5px solid var(--bronze)}
-.tier{padding:34px clamp(18px,2.4vw,34px) 34px;display:flex;flex-direction:column;gap:14px;border-left:.5px solid var(--rule);min-width:0}
-.tier:first-child{border-left:0}
+.tiers{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(10px,1.4vw,18px);margin-top:48px}
+.tier{padding:34px clamp(18px,2.4vw,34px) 34px;display:flex;flex-direction:column;gap:14px;min-width:0}
 .tier .eyebrow{display:flex;justify-content:space-between;gap:10px;align-items:baseline}
 .tier h3{font-weight:300;font-size:2rem;line-height:1;margin:0;color:var(--claret)}
 .tier .blurb{margin:0;color:var(--muted);font-size:.98rem}
@@ -149,18 +151,28 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .pour .wine{font-weight:400}
 .pour .where{font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--bronze)}
 .pour .plus{font-family:var(--sans);font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
-.tier.deluxe{background:var(--claret);color:var(--paper);border-left-color:var(--claret)}
-.tier.deluxe h3,.tier.deluxe .blurb{color:var(--paper)}
-.tier.deluxe .eyebrow,.tier.deluxe .where{color:#D9BFA6}
-.tier.deluxe .plus{color:#E5D6DD}
-.tier.deluxe .pour{border-top-color:rgba(251,250,246,.25)}
-.flag{font-family:var(--sans);font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;border:1px solid currentColor;padding:4px 8px;white-space:nowrap}
-.tier .spacer{flex:1}
-.tier .btn{align-self:flex-start}
-.tier.deluxe .btn{border-color:var(--paper);color:var(--claret);background:var(--paper)}
-.tier.deluxe .btn:hover{background:transparent;color:var(--paper)}
+/* tier colourways: Classic claret, Prestige navy, Deluxe silver */
+.tier.classic,.tier.prestige{color:var(--paper)}
+.tier.classic{background:var(--claret)}
+.tier.prestige{background:var(--navy)}
+.tier.classic h3,.tier.prestige h3,.tier.classic .blurb,.tier.prestige .blurb{color:var(--paper)}
+.tier.classic .eyebrow,.tier.prestige .eyebrow{color:#D9BFA6}
+.tier.classic .plus,.tier.prestige .plus{color:rgba(251,250,246,.72)}
+.tier.classic .pour,.tier.prestige .pour{border-top-color:rgba(251,250,246,.25)}
+.tier.classic .btn,.tier.prestige .btn{border-color:var(--paper);background:var(--paper)}
+.tier.classic .btn{color:var(--claret)}
+.tier.prestige .btn{color:var(--navy)}
+.tier.classic .btn:hover,.tier.prestige .btn:hover{background:transparent;color:var(--paper)}
+.tier.deluxe{background:linear-gradient(135deg,#ECECEA 0%,#CDCECC 45%,#E6E6E4 70%,#C3C4C2 100%);color:var(--ink)}
+.tier.deluxe h3{color:var(--ink)}
+.tier.deluxe .blurb{color:#3E3A3B}
+.tier.deluxe .eyebrow{color:#5B5652}
+.tier.deluxe .plus{color:#5B5652}
+.tier.deluxe .pour{border-top-color:rgba(42,34,36,.2)}
+.tier.deluxe .btn{border-color:var(--ink);background:var(--ink);color:#F1F1EF}
+.tier.deluxe .btn:hover{background:transparent;color:var(--ink)}
 .early{position:relative;z-index:2;margin:28px auto 0;max-width:640px;text-align:center;font-style:italic;color:var(--muted)}
-@media (max-width:900px){.tiers{grid-template-columns:1fr}.tier{border-left:0;border-top:.5px solid var(--rule)}.tier:first-child{border-top:0}}
+@media (max-width:900px){.tiers{grid-template-columns:1fr}}
 
 /* wine */
 .wine-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,6vw,96px);margin-top:44px}
@@ -189,7 +201,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .f1{grid-column:1/8;aspect-ratio:3/2}
 .f2{grid-column:8/13;grid-row:span 2}
 .f3{grid-column:1/8;aspect-ratio:3/2}
-.food-copy{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(28px,6vw,96px);margin-top:48px}
+.food-copy{margin-top:40px;max-width:62ch}
 .menu{list-style:none;margin:0;padding:0}
 .menu li{padding:14px 0;border-top:.5px solid var(--rule);display:grid;grid-template-columns:2.2em 1fr;gap:10px}
 .menu li:last-child{border-bottom:.5px solid var(--rule)}
@@ -257,7 +269,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li><a href="#stay">Stay</a></li>
       <li><a href="#details">Details</a></li>
     </ul>
-    <a class="book-sm" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book</a>
+    <a class="book-sm" href="https://www.tickettailor.com/events/67pallmallmelbourneltd/2483817" target="_blank" rel="noopener">Book</a>
   </div>
 </nav>
 
@@ -274,9 +286,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <span>17:00 – 21:00</span>
     </div>
     <div class="ctas">
-      <a class="btn solid" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book tickets</a>
+      <a class="btn solid" href="https://www.tickettailor.com/events/67pallmallmelbourneltd/2483817" target="_blank" rel="noopener">Book tickets</a>
       <a class="btn line" href="#tickets">View the tiers</a>
     </div>
+    <figure class="hero-photo">
+      <img src="assets/studley-park.webp" alt="Studley Park Boathouse on the Yarra, with rowing boats moored below the deck" width="1309" height="873">
+    </figure>
   </div>
 </header>
 
@@ -334,7 +349,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
       <li>Cocktail bar</li>
     </ul>
     <div class="tiers">
-      <article class="tier">
+      <article class="tier classic">
         <p class="eyebrow"><span>Classic</span></p>
         <h3>Classic</h3>
         <p class="blurb">Non-vintage Champagne, the complete food offering, the full still wine line-up, the wine walkaround and the cocktail bar.</p>
@@ -342,9 +357,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
           <li><span class="wine">NV Taittinger, Brut Réserve</span></li>
         </ul>
         <span class="spacer"></span>
-        <a class="btn line" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book Classic</a>
+        <a class="btn" href="https://www.tickettailor.com/events/67pallmallmelbourneltd/2483817" target="_blank" rel="noopener">Book Classic</a>
       </article>
-      <article class="tier">
+      <article class="tier prestige">
         <p class="eyebrow"><span>Prestige</span></p>
         <h3>Prestige</h3>
         <p class="blurb">Everything in Classic, with Taittinger’s vintage and its Prestige Rosé added to the pour.</p>
@@ -354,7 +369,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
           <li><span class="wine">NV Taittinger, Prestige Rosé</span></li>
         </ul>
         <span class="spacer"></span>
-        <a class="btn line" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book Prestige</a>
+        <a class="btn" href="https://www.tickettailor.com/events/67pallmallmelbourneltd/2483817" target="_blank" rel="noopener">Book Prestige</a>
       </article>
       <article class="tier deluxe">
         <p class="eyebrow"><span>Deluxe</span><span class="flag">Early access</span></p>
@@ -365,7 +380,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
           <li><span class="wine">2015 Taittinger, Comtes de Champagne Blanc de Blancs</span></li>
         </ul>
         <span class="spacer"></span>
-        <a class="btn" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book Deluxe</a>
+        <a class="btn" href="https://www.tickettailor.com/events/67pallmallmelbourneltd/2483817" target="_blank" rel="noopener">Book Deluxe</a>
       </article>
     </div>
     <p class="early">Deluxe ticket holders arrive early, skip the queues, settle in by the river and raise the first Zalto of the afternoon before the full festivities get underway. All Champagnes pour throughout the party.</p>
@@ -405,7 +420,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
         <h3>Mini wine walkaround</h3>
         <p>Inspired by the great river regions of the world, this year’s walkaround follows vineyards shaped by waterways and maritime breezes: from the steep banks of the Mosel to the fog-drenched hills around the Russian River and the stone terraces of the Rhône Valley, with something new to discover at every turn.</p>
         <figure>
-          <img src="assets/pour.webp" alt="A sommelier pours Yarra Valley Chardonnay into a Zalto glass" width="1800" height="1200" loading="lazy">
+          <img src="assets/walkaround.webp" alt="Members comparing white wines at a tasting table" width="1800" height="1200" loading="lazy">
         </figure>
       </div>
     </div>
@@ -416,7 +431,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   <div class="wrap">
     <div class="head">
       <p class="eyebrow">The food</p>
-      <h2 id="food-h">Martin Benn on <em>the great Australian barbecue</em></h2>
+      <h2 id="food-h">Martin Benn, <em>once again</em></h2>
     </div>
     <div class="food-grid">
       <figure class="f1"><img src="assets/scallops.webp" decoding="async" alt="Scallops in the shell on the grill" width="1800" height="1200"></figure>
@@ -425,14 +440,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     </div>
     <div class="food-copy">
       <div class="body">
-        <p>Chef Martin Benn returns to put the 67 Pall Mall stamp on the barbecue, championing local produce and generous summer cooking from the first pour to the last.</p>
+        <p>Chef Martin Benn will once again put his stamp on the menu, with plenty of surprises in store. The full menus will be revealed in early December, but with Martin at the helm, you can be assured you’re in for a treat.</p>
       </div>
-      <ul class="menu" aria-label="What to expect">
-        <li><span class="k">I</span><span>Local seafood, freshly shucked and straight from the grill</span></li>
-        <li><span class="k">II</span><span>A barbecue loaded with Victorian produce</span></li>
-        <li><span class="k">III</span><span>Roaming canapés through the afternoon</span></li>
-        <li><span class="k">IV</span><span>Deli-style stations where cheese and charcuterie hold court into the evening</span></li>
-      </ul>
     </div>
   </div>
 </section>
@@ -508,11 +517,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
     <h2 id="details-h" class="dh">See you <em>by the river</em></h2>
     <div class="dl">
       <div><b>Date</b><span>Saturday 6 February 2027</span></div>
-      <div><b>Time</b><span>17:00 – 21:00<br>Deluxe early access</span></div>
+      <div><b>Time</b><span>17:00 – 21:00<br>Honorary Member and Deluxe ticket holder early access from 4pm</span></div>
       <div><b>Venue</b><span>Studley Park Boathouse<br>1 Boathouse Road, Kew 3101</span></div>
     </div>
     <div class="ctas">
-      <a class="btn solid" href="https://www.67pallmall.com/melbourne/67-pall-mall-melbourne-club-events/" target="_blank" rel="noopener">Book tickets</a>
+      <a class="btn solid" href="https://www.tickettailor.com/events/67pallmallmelbourneltd/2483817" target="_blank" rel="noopener">Book tickets</a>
       <a class="btn line" href="https://www.google.com/maps/search/?api=1&amp;query=Studley+Park+Boathouse+1+Boathouse+Road+Kew+VIC+3101" target="_blank" rel="noopener">Open in Maps</a>
     </div>
     <div class="foot">
